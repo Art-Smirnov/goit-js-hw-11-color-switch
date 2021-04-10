@@ -8,7 +8,7 @@ const colors = [
 ];
 
 const refs = {
-  body: document.querySelector('body'),
+  body: document.body,
   startBtn: document.querySelector('button[data-action="start"]'),
   stopBtn: document.querySelector('button[data-action="stop"]'),
 };
@@ -23,14 +23,16 @@ const randomIntegerFromInterval = (min, max) => {
 };
 
 function onStartBtnClick(e) {
-  e.currentTarget.setAttribute('disabled', true);
+  // e.currentTarget.setAttribute('disabled', true);
   timerId = setInterval(() => {
     refs.body.style.backgroundColor =
       colors[randomIntegerFromInterval(0, colors.length - 1)];
   }, 1000);
+  startBtn.disabled = true;
 }
 
 function onStopBtnClick(e) {
-  refs.startBtn.removeAttribute('disabled');
+  // refs.startBtn.removeAttribute('disabled');
   clearInterval(timerId);
+  startBtn.disabled = false;
 }
