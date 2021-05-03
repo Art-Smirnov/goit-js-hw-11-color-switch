@@ -28,11 +28,11 @@ function onStartBtnClick(e) {
     refs.body.style.backgroundColor =
       colors[randomIntegerFromInterval(0, colors.length - 1)];
   }, 1000);
-  startBtn.disabled = true;
+  refs.startBtn.disabled = true;
 }
 
 function onStopBtnClick(e) {
   // refs.startBtn.removeAttribute('disabled');
   clearInterval(timerId);
-  startBtn.disabled = false;
+  refs.startBtn.disabled = false;
 }
